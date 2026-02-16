@@ -1,0 +1,26 @@
+made a password for default ec2-user
+'sudo passwd ec2-user'
+
+created a non root user
+'sudo adduser new'
+
+granted sudo permissions to the new user by adding it to wheel group
+'sudo usermod -aG wheel new'
+
+checking if the user is successfully added
+'su - new'
+'sudo -v'
+
+to allow/deny password authentication during ssh make changes to in field PasswordAuthentication
+'sudo nano /etc/ssh/sshd_config'
+
+restart ssh service to apply changes
+'sudo service ssh restart'
+
+configured sg to only allow ssh from my ip
+
+to allow/deny root login make changes to PermitRootLogin
+'sudo nano /etc/ssh/sshd_config'
+
+restart ssh service to apply changes
+'sudo service ssh restart'
