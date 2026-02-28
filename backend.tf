@@ -1,11 +1,9 @@
 terraform {
-  required_version = "1.14.6"
-
   backend "s3" {
     bucket         = "ansible-playbook-back"
     key            = "t1/terraform.tfstate"
     region         = "ap-south-1"
-    use_lockfile   = true
+    dynamodb_table = "terraform-locks"
     encrypt        = true
   }
 }
