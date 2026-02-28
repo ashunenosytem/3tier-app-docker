@@ -104,6 +104,7 @@ services:
 
 volumes:
   mongo_data:
+  expense_uploads:
 EOF
 
 # -------------------------
